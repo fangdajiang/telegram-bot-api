@@ -93,6 +93,17 @@ func NewPhotoToChannel(username string, file RequestFileData) PhotoConfig {
 	}
 }
 
+func NewAudioToChannel(username string, file RequestFileData) AudioConfig {
+	return AudioConfig{
+		BaseFile: BaseFile{
+			BaseChat: BaseChat{
+				ChannelUsername: username,
+			},
+			File: file,
+		},
+	}
+}
+
 // NewAudio creates a new sendAudio request.
 func NewAudio(chatID int64, file RequestFileData) AudioConfig {
 	return AudioConfig{
